@@ -24,8 +24,7 @@ Pod::Spec.new do |spec|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  spec.description  = <<-DESC
-                   DESC
+  spec.description  = "Category Safe"
 
   spec.homepage     = "https://github.com/wanghao522/"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -38,7 +37,7 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = "MIT"
+  spec.license      = "LICENSE"
   # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -92,11 +91,13 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "Classes", "Classes/*.{h,m}"
-  spec.exclude_files = "Classes/"
+  spec.source_files  = "Sources/*.{h,m}"
 
-  spec.public_header_files = "Classes/*.h"
+  spec.public_header_files = "Sources/*.h"
 
+  spec.subspec 'Category' do |ss|
+    ss.source_files = "Sources/*BLSafe.{h,m}"
+  end
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
